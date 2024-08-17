@@ -1,0 +1,38 @@
+﻿@model Category // if we don't pass anything in the controller a new obj will be created
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient ml-0 py-0">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Delete Category</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+	<form method="post" class="row">
+		<div class="border p-3">
+			<div class="form-floating py-2 col-12">
+			<input asp-for="Name" disabled class="form-control border-0 shadow"/>
+			<label asp-for="Name" class="ms2"></label>
+		</div>
+		<div class="form-floating py-2 col-12">
+			<input asp-for="DisplayOrder" disabled class="form-control border-0 shadow"/>
+			<label asp-for="DisplayOrder" class="ms2"></label>
+		</div>
+
+			<div class="row mt-3">
+				<div class="col-6 col-md-3">  <!-- the button wil be 6 cols wide on small devices and 3 cols wide on medium and above devices-->
+					<button type="submit" class="btn btn-danger form-control">Delete</button>
+				</div>
+				<div class="col-6 col-md-3">
+					<a asp-controller="Category" asp-action="Index" class="btn btn-outline-primary border form-control">
+						Back to List
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</form>
+		</div>
+	</div>
+
+
