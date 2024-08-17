@@ -19,7 +19,14 @@ namespace BulkyWeb.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            return View(productList);
+        }
+
+        public IActionResult Details(int id)
+        {
+            Product product = _unitOfWork.Product.Get(p => p.Id == id, includeProperties: "Category");
+            return View(product);
         }
 
         public IActionResult Privacy()
